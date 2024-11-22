@@ -14,5 +14,5 @@ sells the best to customers.
 
 ## Functionality
 
-This program will help the user (as if they were the business owners) set the different attributes of each of the flavors of the shop in order to help with decisions of how it is that they want to sell their product. 
+This program will help the user (as if they were the business owners) set the different attributes (type, size, price, topping) of each of the flavors of the shop in order to help with decisions of how it is that they want to sell their product. The program will also calculate the amount of calories of the building of the ice cream making the creation of different variations easier when it comes to analyzing the product.
 At the same time it will include a Menu, which will be altered by the classes, for customers to look at the different options of ice cream that can be ordered 
