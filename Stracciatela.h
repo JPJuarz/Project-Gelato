@@ -1,51 +1,25 @@
 //  Stracciatela.h
 //  Project_Gelato
 
+#ifndef STRACCIATELA_H
+#define STRACCIATELA_H
 #include <string>
 #include <iostream>
+#include "Gelato.h"
 using namespace std;
 
-class Stracciatela {
+class Stracciatela : public Gelato {
 private:
-    string type;
-    int price;
-    float size;
-
+    float cal = 2.7;
 public:
-    Stracciatela();
-    Stracciatela(string tp, int pr, float sz) : type(tp), price(pr), size(sz) {};
-
-    string get_type();
-    int get_price();
-    float get_size();
-
-    void set_type();
-    void set_price();
-    void set_size();
+    Stracciatela() : Gelato("Stracciatela", 0, 0.0) {}
+    void set_type() {
+        cout << "Choose type for Stracciatela (Cone | Cup): ";
+        cin >> type;
+    }
+    float calculate_calories() {
+           return size * cal;
+       }
 };
 
-string Stracciatela::get_type() {
-    return type;
-}
-int Stracciatela::get_price() {
-    return price;
-}
-float Stracciatela::get_size() {
-    return size;
-}
-
-void Stracciatela::set_type() {
-    cout << "Choose type (Cone | Cup): ";
-    cin >> type;
-}
-void Stracciatela::set_price() {
-    cout << "Set price: ";
-    cin >> price;
-}
-void Stracciatela::set_size() {  
-    cout << "Set size in grams: ";
-    cin >> size;
-}
-
-// Default constructor
-Stracciatela::Stracciatela() : type(""), price(0), size(0.0) {}
+#endif

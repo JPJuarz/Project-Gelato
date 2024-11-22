@@ -1,52 +1,25 @@
 //  Vanilla.h
 //  Project_Gelato
 
+#ifndef VANILLA_H
+#define VANILLA_H
 #include <string>
 #include <iostream>
+#include "Gelato.h"
 using namespace std;
 
-class Vanilla {
+class Vanilla : public Gelato {
 private:
-    string type3;
-    int price3;
-    float size3;
-
+    float cal = 2.1;
 public:
-    Vanilla();
-    Vanilla(string tp, int pr, float sz) : type3(tp), price3(pr), size3(sz) {};
-
-    string get_type3();
-    int get_price3();
-    float get_size3();
-
-    void set_type3();
-    void set_price3();
-    void set_size3();
+    Vanilla() : Gelato("Vanilla", 0, 0.0) {}
+    void set_type() {
+        cout << "Choose type for Vanilla (Cone | Cup): ";
+        cin >> type;
+    }
+    float calculate_calories() {
+           return size * cal;
+       }
 };
 
-string Vanilla::get_type3() {
-    return type3;
-}
-int Vanilla::get_price3() {
-    return price3;
-}
-float Vanilla::get_size3() {
-    return size3;
-}
-
-void Vanilla::set_type3() {
-    cout << "Choose type (Cone | Cup): ";
-    cin >> type3;
-}
-void Vanilla::set_price3() {
-    cout << "Set price: ";
-    cin >> price3;
-}
-void Vanilla::set_size3() {
-    cout << "Set size in grams: ";
-    cin >> size3;
-}
-
-// Default constructor
-Vanilla::Vanilla() : type3(""), price3(0), size3(0.0) {}
-
+#endif
